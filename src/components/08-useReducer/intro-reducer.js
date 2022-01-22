@@ -6,8 +6,8 @@ const initialState = [{
 }];
 
 const todoReducer = ( state = initialState, action ) => {
-
-    if( action?.type === 'agregar' ){
+    
+    if ( action?.type === 'agregar' ) {
         return [ ...state, action.payload ];
     }
 
@@ -16,17 +16,23 @@ const todoReducer = ( state = initialState, action ) => {
 
 let todos = todoReducer();
 
+
 const newTodo = {
     id: 2,
     todo: 'Comprar leche',
     done: false
 }
 
-const action = {
+
+const agregarTodoAction = {
     type: 'agregar',
     payload: newTodo
 }
 
-todos = todoReducer( todos, action )
+
+todos = todoReducer( todos, agregarTodoAction );
+
+
 
 console.log(todos);
+
